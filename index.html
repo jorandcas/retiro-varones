@@ -39,7 +39,7 @@
       border:1px solid var(--border); display:flex; align-items:center; justify-content:center;
       flex:0 0 auto; overflow:hidden;
     }
-    .logo img{width:100%; height:100%; object-fit:cover}
+    .logo img{width:100%; height:100%; object-fit:contain}
     h1{font-size:1.35rem; line-height:1.2; margin:0}
     p{margin:.25rem 0 .75rem; color:var(--muted)}
     .row{
@@ -77,9 +77,8 @@
     <section class="card">
       <header>
         <div class="logo" aria-hidden="true">
-          <!-- TODO: Reemplaza el rectángulo por tu logo:
-               <img src="./logo.png" alt="Torre Fuerte"> -->
-          <span class="muted" style="font-size:.8rem">Logo</span>
+          <!-- TODO: Reemplaza el rectángulo por tu logo:-->
+               <img src="./logo.png" alt="Torre Fuerte"> 
         </div>
         <div>
           <h1>Datos para depósito / transferencia</h1>
