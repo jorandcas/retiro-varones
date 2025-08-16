@@ -1,35 +1,162 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <title>Depósito • Retiro de Varones</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Información de depósito para el Retiro de Varones - Torre Fuerte">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Depósito • Retiro de Varones Torre Fuerte</title>
+  <meta name="description" content="Datos bancarios para depósito/transferencia del Retiro de Varones Torre Fuerte" />
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;margin:0;background:#0f172a;color:#e2e8f0;display:flex;min-height:100vh}
-    .wrap{max-width:720px;margin:auto;padding:24px}
-    .card{background:#111827;padding:24px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.3)}
-    h1{margin:0 0 8px;font-size:1.6rem}
-    p{margin:.5rem 0 1rem;line-height:1.5}
-    .img{border-radius:12px;overflow:hidden;border:1px solid #1f2937}
-    .img img{width:100%;height:auto;display:block}
-    .badge{display:inline-block;background:#1e293b;color:#93c5fd;padding:.25rem .6rem;border-radius:999px;font-size:.85rem;margin-bottom:.75rem}
-    .cta{margin-top:16px;font-size:.95rem;opacity:.9}
-    .small{font-size:.85rem;color:#94a3b8}
+    :root{
+      --bg:#000;            /* fondo negro */
+      --card:#111;          /* tarjeta */
+      --text:#e5e7eb;       /* texto principal */
+      --muted:#94a3b8;      /* texto secundario */
+      --accent:#60a5fa;     /* azul botones */
+      --accent-2:#1d4ed8;   /* azul hover */
+      --border:#1f2937;
+      --radius:16px;
+      --shadow:0 10px 30px rgba(0,0,0,.45);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:var(--bg); color:var(--text);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;
+      display:flex; align-items:center; justify-content:center;
+      padding:24px;
+    }
+    .wrap{width:100%; max-width:720px}
+    .card{
+      background:var(--card); border:1px solid var(--border);
+      border-radius:var(--radius); box-shadow:var(--shadow);
+      padding:24px; width:100%;
+    }
+    header{
+      display:flex; gap:16px; align-items:center; margin-bottom:12px;
+    }
+    .logo{
+      width:64px; height:64px; border-radius:12px; background:#0b0b0b;
+      border:1px solid var(--border); display:flex; align-items:center; justify-content:center;
+      flex:0 0 auto; overflow:hidden;
+    }
+    .logo img{width:100%; height:100%; object-fit:cover}
+    h1{font-size:1.35rem; line-height:1.2; margin:0}
+    p{margin:.25rem 0 .75rem; color:var(--muted)}
+    .row{
+      display:flex; flex-wrap:wrap; gap:12px; margin-top:12px;
+    }
+    .field{
+      flex:1 1 280px; background:#0c0c0c; border:1px solid var(--border);
+      border-radius:12px; padding:14px;
+    }
+    .label{font-size:.85rem; color:var(--muted); margin-bottom:6px}
+    .value{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      font-variant-numeric:tabular-nums; word-break:break-word;
+    }
+    .mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace}
+    button.copy{
+      appearance:none; border:1px solid var(--border);
+      background:#0b1220; color:var(--accent);
+      padding:6px 10px; border-radius:10px; font-size:.9rem; cursor:pointer;
+    }
+    button.copy:hover{background:#0b1540; color:#cfe3ff; border-color:#223}
+    .grid{
+      display:grid; grid-template-columns:1fr; gap:12px; margin-top:16px;
+    }
+    @media (min-width:640px){
+      .grid{grid-template-columns:1fr 1fr}
+    }
+    .muted{color:var(--muted)}
+    .footer{margin-top:12px; font-size:.85rem; color:var(--muted)}
+    .success{color:#22c55e}
   </style>
 </head>
 <body>
   <main class="wrap">
-    <div class="card">
-      <span class="badge">Retiro de Varones • Torre Fuerte</span>
-      <h1>Datos para depósito / transferencia</h1>
-      <p>Usa la cuenta indicada en la imagen. Por favor comparte tu comprobante por WhatsApp al número indicado.</p>
-      <div class="img">
-        <img src="./datos-deposito.png" alt="Información bancaria para depósito del Retiro de Varones">
+    <section class="card">
+      <header>
+        <div class="logo" aria-hidden="true">
+          <!-- TODO: Reemplaza el rectángulo por tu logo:
+               <img src="./logo.png" alt="Torre Fuerte"> -->
+          <span class="muted" style="font-size:.8rem">Logo</span>
+        </div>
+        <div>
+          <h1>Datos para depósito / transferencia</h1>
+          <p>Comparte tu comprobante por WhatsApp al contacto indicado por el equipo de varones.</p>
+        </div>
+      </header>
+
+      <!-- Datos principales -->
+      <div class="row">
+        <div class="field">
+          <div class="label">Titular</div>
+          <div class="value">DANIEL JAVIER RAMÍREZ GONZÁLEZ</div>
+        </div>
+        <div class="field">
+          <div class="label">Banco</div>
+          <div class="value">BBVA</div>
+        </div>
       </div>
-      <p class="cta">¿Cambió la cuenta? No te preocupes: esta página siempre tendrá la información vigente.</p>
-      <p class="small">Última actualización: <!-- escribe la fecha aquí --></p>
-    </div>
+
+      <!-- Cuenta y CLABE con botón Copiar -->
+      <div class="grid">
+        <div class="field">
+          <div class="label">Cuenta</div>
+          <div class="value">
+            <span class="mono" id="cuenta-text">114 368 6647</span>
+            <button class="copy" data-copy="1143686647" aria-label="Copiar cuenta">Copiar</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="label">Cuenta CLABE</div>
+          <div class="value">
+            <span class="mono" id="clabe-text">012 650 01143686647 8</span>
+            <button class="copy" data-copy="012650011436866478" aria-label="Copiar CLABE">Copiar</button>
+          </div>
+        </div>
+      </div>
+
+      <p class="footer">Última actualización: <!-- TODO: escribe la fecha aquí, ej. 2025-08-16 --></p>
+      <p class="footer" id="copy-status" role="status" aria-live="polite"></p>
+    </section>
   </main>
+
+  <script>
+    // Botones Copiar (el valor en data-copy no tiene espacios)
+    const statusEl = document.getElementById('copy-status');
+    function setStatus(msg, ok=true){
+      statusEl.textContent = msg;
+      statusEl.className = 'footer ' + (ok ? 'success' : '');
+      setTimeout(()=>{ statusEl.textContent=''; statusEl.className='footer'; }, 2400);
+    }
+    document.querySelectorAll('button.copy').forEach(btn=>{
+      btn.addEventListener('click', async ()=>{
+        const value = btn.getAttribute('data-copy') || '';
+        try{
+          await navigator.clipboard.writeText(value);
+          setStatus('¡Copiado al portapapeles!');
+        }catch(e){
+          // Fallback si el navegador bloquea Clipboard API
+          const ta = document.createElement('textarea');
+          ta.value = value; document.body.appendChild(ta);
+          ta.select(); document.execCommand('copy'); ta.remove();
+          setStatus('Copiado (método alterno).');
+        }
+      });
+    });
+
+    // Permite copiar tocando el número también
+    [['#cuenta-text','1143686647'], ['#clabe-text','012650011436866478']].forEach(([sel,val])=>{
+      const el = document.querySelector(sel);
+      el.style.cursor='pointer';
+      el.title='Toca para copiar';
+      el.addEventListener('click', async ()=>{
+        try{ await navigator.clipboard.writeText(val); setStatus('¡Copiado!'); }
+        catch(e){ setStatus('No se pudo copiar', false); }
+      });
+    });
+  </script>
 </body>
 </html>
